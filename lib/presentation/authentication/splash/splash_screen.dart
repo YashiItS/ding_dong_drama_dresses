@@ -1,9 +1,9 @@
+import 'dart:async';
 import 'package:ding_dong_drama_dresses/config/utils/color.dart';
 import 'package:ding_dong_drama_dresses/config/utils/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '../../services/splash/splash_services.dart';
+import '../../../config/routes/routes_name.dart';
 
 class SplashScreen extends StatefulWidget{
   const SplashScreen({super.key});
@@ -14,12 +14,16 @@ class SplashScreen extends StatefulWidget{
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  SplashServices splashServices = SplashServices();
-
   @override
   void initState() {
     super.initState();
-    SplashServices().isLogin(context);
+    isLogin(context);
+  }
+
+  void isLogin(BuildContext con){
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushNamedAndRemoveUntil(con, RoutesName.homeScreen, (route) => false);
+    });
   }
 
   @override

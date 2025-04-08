@@ -1,6 +1,6 @@
 import 'package:ding_dong_drama_dresses/config/routes/routes_name.dart';
 import 'package:flutter/material.dart';
-import '../../view/views.dart';
+import '../../presentation/views.dart';
 
 class Routes {
   static Route<dynamic> generateRoutes(RouteSettings settings){

@@ -17,7 +17,7 @@ final List<Map<String, dynamic>> items = [
 Widget subCategoryWidget() {
   return Container(
       height: 105.h,
-      width: double.infinity,
+      width: 140.h,
       padding: EdgeInsets.symmetric(vertical: 11.w),
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
@@ -40,7 +40,7 @@ Widget subCategoryWidget() {
                 ),
                 child: Image.asset(items[index]["icon"]),
               ),
-              Text(items[index]["title"], style: AppTextStyles.black_14_400.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500))
+              Text(items[index]["title"], style: AppTextStyles.black_14_400.copyWith(fontSize: 13.sp, fontWeight: FontWeight.w500), overflow: TextOverflow.ellipsis)
             ],
           );
         },

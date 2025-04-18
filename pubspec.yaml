@@ -26,8 +26,8 @@ dependencies:
 
   # Others
   cached_network_image: ^3.4.1
-  eva_icons_flutter: ^3.1.0
   flutter_carousel_widget: ^3.1.0
+  flutter_svg: ^2.0.17
 
 
 dev_dependencies:
@@ -38,7 +38,16 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
- # Import Assets like images, icons, etc.
+  # Import Assets like images, icons, etc.
   assets:
     - assets/images/
-    - assets/fonts/
+    - assets/icons/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Black.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf

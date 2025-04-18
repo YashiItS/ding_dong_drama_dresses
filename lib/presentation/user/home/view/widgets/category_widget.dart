@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../config/utils/color.dart';
+import '../../../../../config/utils/text_style.dart';
+
+Widget categoryWidget(){
+  return Container(
+      height: 203.r,
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 10.w),
+      decoration: BoxDecoration(
+        color: AppColors.whiteColor,
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Category", style: AppTextStyles.black_16_400.copyWith(fontWeight: FontWeight.w600, color: AppColors.buttonColor)),
+                Text("all", style: AppTextStyles.black_14_400.copyWith(color: AppColors.greyColor))
+              ],
+            ),
+          ),
+          8.verticalSpace,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 5),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: AppColors.whiteColor,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.greyColor.withOpacity(0.5),
+                            blurRadius: 2,
+                            spreadRadius: 0.5,
+                            offset: Offset(0, 1),
+                          )
+                        ]
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/images/categ.png"),
+                        Text("Cultural Functions", style: AppTextStyles.black_14_400.copyWith(fontSize: 13, fontWeight: FontWeight.w500))
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      )
+  );
+}

@@ -7,11 +7,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => MyApp(),
+    ScreenUtilInit(
+      designSize: Size(375, 812), // Set your design size
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, __) => const MyApp(),
     ),
-    // MyApp()
   );
 }
 
@@ -19,18 +20,16 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => ScreenUtilInit(
-    designSize: const Size(375, 812),
-    minTextAdapt: true,
-    splitScreenMode: true,
-    builder: (context, child) => MaterialApp(
+  Widget build(BuildContext context) {
+    return  MaterialApp(
       title: 'D4 Drama Dresses',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        fontFamily: 'Poppins',
       ),
-      initialRoute: RoutesName.homeScreen,
+      initialRoute: RoutesName.splashScreen,
       onGenerateRoute: Routes.generateRoutes,
-    ),
-  );
+    );
+  }
 }

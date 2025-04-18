@@ -30,27 +30,31 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: AppColors.bgColor,
-        appBar: headerWidget(scaffoldKey),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                subCategoryWidget(),
-                6.verticalSpace,
-                carouselBannerWidget(),
-                6.verticalSpace,
-                categoryWidget(),
-                6.verticalSpace,
-                productsWidget(),
-                6.verticalSpace,
-                smallBannerWidget(),
-                6.verticalSpace,
-                trendingWidget(),
-                6.verticalSpace,
-                outletsWidget(),
-              ],
+        body: Column(
+          children: [
+            headerWidget(scaffoldKey),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    subCategoryWidget(),
+                    6.verticalSpace,
+                    carouselBannerWidget(),
+                    6.verticalSpace,
+                    categoryWidget(),
+                    6.verticalSpace,
+                    productsWidget(),
+                    6.verticalSpace,
+                    smallBannerWidget(),
+                    6.verticalSpace,
+                    trendingWidget(),
+                    6.verticalSpace,
+                    outletsWidget(),
+                  ],
+                ),
+              ),
             ),
-          ),
+          ],
         ),
         bottomNavigationBar: bottomNavigationBar(),
         drawer: Drawer(

@@ -7,7 +7,8 @@ import '../../../../../config/utils/text_style.dart';
 PreferredSizeWidget headerWidget(GlobalKey<ScaffoldState> key) {
   return PreferredSize(
             preferredSize: Size(double.infinity, 82),
-            child: Container(
+            child:
+            Container(
               padding: EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
                   color: AppColors.whiteColor,
